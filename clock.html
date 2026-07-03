@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Time Zone Clock</title>
+    <link rel="stylesheet" href="clock-style.css">
+</head>
+<body>
+    <div class="clock-container">
+        <!-- HEADER -->
+        <header class="clock-header">
+            <div class="header-content">
+                <h1>🌍 GLOBAL TIME ZONE CLOCK</h1>
+                <p>Real-time across the world</p>
+            </div>
+        </header>
+
+        <!-- MAIN DISPLAY -->
+        <div class="primary-clock-section">
+            <div class="local-time-display">
+                <h2>Your Local Time</h2>
+                <div class="time-digits" id="local-time">00:00:00</div>
+                <div class="time-zone-label" id="local-timezone">UTC+0</div>
+                <div class="date-display" id="local-date">Sunday, January 1</div>
+            </div>
+        </div>
+
+        <!-- TIMEZONE SELECTOR & CONTROLS -->
+        <div class="controls-section">
+            <div class="control-group">
+                <label for="timezone-input">Add Custom Timezone:</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="number" 
+                        id="timezone-input" 
+                        placeholder="e.g., -5, 8, 5.5" 
+                        min="-12" 
+                        max="14" 
+                        step="0.5"
+                    >
+                    <button id="add-timezone-btn" class="btn-add">+ Add Zone</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRESET TIMEZONES -->
+        <div class="presets-section">
+            <h3>Popular Timezones</h3>
+            <div class="presets-grid">
+                <button class="preset-btn" data-offset="0" data-city="London">🇬🇧 London (GMT)</button>
+                <button class="preset-btn" data-offset="-5" data-city="New York">🇺🇸 New York (EST)</button>
+                <button class="preset-btn" data-offset="-8" data-city="Los Angeles">🇺🇸 Los Angeles (PST)</button>
+                <button class="preset-btn" data-offset="1" data-city="Paris">🇫🇷 Paris (CET)</button>
+                <button class="preset-btn" data-offset="2" data-city="Cairo">🇪🇬 Cairo (EET)</button>
+                <button class="preset-btn" data-offset="3" data-city="Moscow">🇷🇺 Moscow (MSK)</button>
+                <button class="preset-btn" data-offset="5.5" data-city="Mumbai">🇮🇳 Mumbai (IST)</button>
+                <button class="preset-btn" data-offset="8" data-city="Singapore">🇸🇬 Singapore (SGT)</button>
+                <button class="preset-btn" data-offset="9" data-city="Tokyo">🇯🇵 Tokyo (JST)</button>
+                <button class="preset-btn" data-offset="10" data-city="Sydney">🇦🇺 Sydney (AEDT)</button>
+                <button class="preset-btn" data-offset="-11" data-city="Samoa">🇼🇸 Samoa (SST)</button>
+                <button class="preset-btn" data-offset="12" data-city="Fiji">🇫🇯 Fiji (FJT)</button>
+            </div>
+        </div>
+
+        <!-- ACTIVE TIMEZONES DISPLAY -->
+        <div class="timezones-display">
+            <h3>Active Timezones</h3>
+            <div class="timezone-cards" id="timezone-cards-container">
+                <!-- Timezone cards will be inserted here -->
+            </div>
+        </div>
+
+        <!-- CLEAR ALL BUTTON -->
+        <div class="action-buttons">
+            <button id="clear-all-btn" class="btn-clear">🗑️ Clear All</button>
+        </div>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
